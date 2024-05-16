@@ -1,0 +1,17 @@
+.header .container{
+    display: flex;
+    justify-content: space-between;
+padding: 20px;
+    .center-header ul{
+        display: flex;
+        gap: 40px;
+        font-size: 14px;
+    }
+}
+.header{
+    background-color: #ecfdff;
+}
+.right-header{
+    display: flex;
+    gap: 20px;
+}
