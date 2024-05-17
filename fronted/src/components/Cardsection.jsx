@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Cardsection.css"
+import axios from 'axios'
+import MainContext from '../context/context'
 const Cardsection = () => {
+    const{data,addToBasket}=useContext(MainContext)
   return (
     <div className='card-sectn'>
         <div className="container">
@@ -10,22 +13,24 @@ const Cardsection = () => {
             </div>
  
 <div className="cards">
-    <div className="card">
+    {data.map((item,index)=>(<div className="card">
         <div className="card-body">
-            <img src="https://preview.colorlib.com/theme/aranoz/img/product/product_1.png" alt="" />
+            <img src={item.image} alt="" />
         </div>
         <div className="card-footer">
-            <h4> Quartz Belt Watch</h4>
-            <span>$150.00</span>
+            <h4> {item.title}</h4>
+            <span>${item.price}</span>
             <div className="btn-like">
-            <button id='add'>Add to basket</button>
+            <button onClick={()=>{
+                addToBasket(item._id)
+            }} id='add'>Add to basket</button>
             <i class="fa-regular fa-heart"></i>
             <button id='detail'>Details</button>
             </div>
            
 
         </div>
-    </div>
+    </div>))}
 </div>
         </div>
 

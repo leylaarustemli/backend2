@@ -1,6 +1,7 @@
 
 import React from 'react'
 import "./header.css"
+import { Link } from 'react-router-dom'
 const Header = () => {
 return (
     <div className='header'>
@@ -10,7 +11,7 @@ return (
 </div>
 <div className="center-header">
     <ul>
-        <li>Home</li>
+        <li><Link to="/">Home</Link></li>
         <li>Shop<i class="fa-solid fa-chevron-down"></i></li>
         <li>Pages<i class="fa-solid fa-chevron-down"></i></li>
         <li>Blog<i class="fa-solid fa-chevron-down"></i></li>
@@ -20,7 +21,7 @@ return (
 <div className="right-header">
 <i class="fa-solid fa-magnifying-glass"></i>
 <i class="fa-regular fa-heart"></i>
-<i class="fa-solid fa-cart-plus"></i>
+ <Link to="/basket"> <i class="fa-solid fa-cart-plus"></i></Link> 
 </div>
         </div>
 

@@ -12,27 +12,8 @@ const Blogs = mongoose.model("Blogs", new mongoose.Schema({
     description: {
         type: String
     },
-    isActive: {
-        type: Boolean
-
-    },
-    view: {
-        type: Number
-    },
-    author: {
-        type: Object
-    },
-    comments: {
-        type: Array
-    },
-    category: {
-        type: String
-    },
-    like: {
-        type: Number
-    },
-    isPopular: {
-        type: Boolean
+    price: {
+        type:Number
     }
 }))
 

@@ -8,12 +8,11 @@ require("dotenv").config()
 app.use(cors())
 app.use(express.json())
 app.use("/api/blogs", BlogsRouter)
-app.use("/api/categories", CategoriesRouter);
-
-mongoose.connect(process.env.CONNECT_STRING).then(() => {
+app.use("/api/categories", CategoriesRouter)
+mongoose.connect(process.env.CONNECTION_STRING).then(() => {
     console.log("connected")
 })
 
-app.listen(8080, () => {
-    console.log("server running on 8080")
+app.listen(5000, () => {
+    console.log("server running on 5000")
 })
