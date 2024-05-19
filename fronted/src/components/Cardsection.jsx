@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import "./Cardsection.css"
 import axios from 'axios'
 import MainContext from '../context/context'
+import { Link } from 'react-router-dom'
 const Cardsection = () => {
     const{data,addToBasket}=useContext(MainContext)
   return (
@@ -21,11 +22,11 @@ const Cardsection = () => {
             <h4> {item.title}</h4>
             <span>${item.price}</span>
             <div className="btn-like">
-            <button onClick={()=>{
+            <button onClick={()=>{console.log("ESEBLESME ")
                 addToBasket(item._id)
             }} id='add'>Add to basket</button>
             <i class="fa-regular fa-heart"></i>
-            <button id='detail'>Details</button>
+            <Link to={`detail/${item._id}`} id='detail'>Details</Link>
             </div>
            
 
